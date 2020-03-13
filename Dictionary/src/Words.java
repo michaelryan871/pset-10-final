@@ -9,6 +9,14 @@ public class Words {
 		this.definitions = definitions; 
 		this.synonyms = synonyms; 
 		this.antonyms = antonyms; 
-
 	}
+	
+	public String getWord() {
+		return this.word;
+	}
+	
+	public void setWord(String word) {
+		this.word = word;
+	}
+	
 }
