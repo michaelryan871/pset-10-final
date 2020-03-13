@@ -40,6 +40,19 @@ public class Frame {
 		       ;
 		        return  Setup.sortWordsAsc(listOfWords);
 		  }
+	  
+	  private static ArrayList<Words> getWordClass() throws FileNotFoundException{
+		    Gson gson = new Gson();
+		        //String classpathDirectory = Setup.getClasspathDir();
+		        BufferedReader br = new BufferedReader(new FileReader("./words.json"));
+		        Words[] words = gson.fromJson(br, Words[].class);
+		        ArrayList<Words> listOfWords = new ArrayList<Words>();
+		        for (Words word : words) {
+		          listOfWords.add(word);
+		        }
+		       ;
+		        return listOfWords;
+		  }
 	
 	public static void createAndShowUI() throws BadLocationException {
 		JFrame Dictionary = new JFrame("Dictionary");
