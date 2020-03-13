@@ -28,7 +28,7 @@ public class Words {
 	}
 	
 	public String[] getSynonyms() {
-		this.synonyms;
+		return this.synonyms;
 	}
 	
 	public void srtSynonyms(String[] synonyms) {
