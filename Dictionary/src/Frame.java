@@ -135,6 +135,27 @@ public class Frame {
 	    label_1.setBounds(346, 161, 137, 20);
 	    panel1.add(label_1);
 	    
+	    JLabel lblAntonyms = new JLabel("Antonyms");
+	    lblAntonyms.setFont(new Font("Tahoma", Font.BOLD, 32));
+	    lblAntonyms.setBounds(10, 318, 184, 54);
+	    panel1.add(lblAntonyms);
+	    
+	    JLabel label_2 = new JLabel("Seperate by comma");
+	    label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	    label_2.setBounds(20, 369, 137, 20);
+	    panel1.add(label_2);
+	    
+	    JTextField textField_3 = new JTextField();
+	    textField_3.setToolTipText("antonyms");
+	    textField_3.setColumns(10);
+	    textField_3.setBounds(20, 400, 286, 20);
+	    panel1.add(textField_3);
+	    
+	    JLabel lblRequred = new JLabel("* = required");
+	    lblRequred.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	    lblRequred.setBounds(20, 513, 137, 20);
+	    panel1.add(lblRequred);
+	    
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
 		Dictionary.add(add);
