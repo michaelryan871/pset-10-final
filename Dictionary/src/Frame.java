@@ -81,6 +81,17 @@ public class Frame {
 		scrollPane.setViewportView(panel1);
 		panel1.setLayout(null);
 		
+		JLabel lblNewLabel = new JLabel("Word*");
+	    lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 32));
+	    lblNewLabel.setBounds(10, 11, 117, 54);
+	    panel1.add(lblNewLabel);
+	    
+	    JTextField textField = new JTextField();
+	    textField.setToolTipText("word");
+	    textField.setBounds(20, 76, 286, 20);
+	    panel_1.add(textField);
+	    textField.setColumns(10);
+		
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
 		Dictionary.add(add);
