@@ -3,6 +3,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 import javax.swing.event.*;
+import javax.swing.event.ListSelectionEvent;
 
 import com.google.gson.Gson; 
 
@@ -12,10 +13,24 @@ import java.util.*;
 
 public class Frame {
 	
+	  public static void main(String[] args) throws FileNotFoundException{
+
+	      getWords();
+	      EventQueue.invokeLater(new Runnable() {
+	    	  public void run() {
+	    		  try {
+	    			 createAndShowUI();
+	    		  } catch (Exception e) {
+	    			  e.printStackTrace();
+	    		  }
+	    	  }
+	      });
+	 }
+	
 	  private static DefaultListModel<String> getWords() throws FileNotFoundException{
 		    Gson gson = new Gson();
 		        // String classpathDirectory = Setup.getClasspathDir();
-		        BufferedReader br = new BufferedReader(new FileReader( "./words.json"));
+		        BufferedReader br = new BufferedReader(new FileReader("./words.json"));
 		        Words[] words = gson.fromJson(br, Words[].class);
 		        System.out.println(words.length + " words added");
 		        DefaultListModel<String> listOfWords = new DefaultListModel<String>();
@@ -64,15 +79,17 @@ public class Frame {
 		Dictionary.add(definition);
 		
 		JList<String> words = new JList<String>();
-		words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+		
+		/*words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		words.setLayoutOrientation(JList.HORIZONTAL_WRAP);
 		words.setVisibleRowCount(-1);
 		words.setBounds(6, 123, 207, 597);
-		Dictionary.add(words);
+		Dictionary.add(words);*/
 		
 		//Border(s)
-		words.setBorder(new LineBorder(Color.BLACK, 2, true));
-		definition.setBorder(new LineBorder(Color.BLACK, 2, true));
+		words.setBorder(new LineBorder(Color.BLACK, 1, true));
+		definition.setBorder(new LineBorder(Color.BLACK, 1, true));
 		searchBar.setBorder(new LineBorder(Color.BLACK, 1, true));
 		
 		//JFrame Option(s)
@@ -81,18 +98,4 @@ public class Frame {
 		Dictionary.setResizable(false);
 		
 	}
-	
-	  public static void main(String[] args) throws FileNotFoundException{
-
-	      getWords();
-	      EventQueue.invokeLater(new Runnable() {
-	    	  public void run() {
-	    		  try {
-	    			 createAndShowUI();
-	    		  } catch (Exception e) {
-	    			  e.printStackTrace();
-	    		  }
-	    	  }
-	      });
-	 }
 }
