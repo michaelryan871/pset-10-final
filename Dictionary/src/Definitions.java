@@ -6,4 +6,13 @@ public class Definitions {
 		this.definition = definition; 
 		this.partOfSpeech = partOfSpeech; 
 	}
+	
+	public void setDefintions(String definition) {
+		this.definition = definition; 
+	}
+	
+	public String getDefinition() {
+		return this.definition;
+	}
+	
 }
