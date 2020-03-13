@@ -37,6 +37,11 @@ public class Frame {
 		Dictionary.add(descend);
 		
 		
+		JTextArea definition = new JTextArea(); 
+		definition.setBounds(218, 5, 675, 715);
+		definition.setEditable(false);
+		Dictionary.add(definition);
+		
 		//JFrame Option(s)
 		Dictionary.setLayout(null);
 		Dictionary.setVisible(true);
