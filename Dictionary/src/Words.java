@@ -35,4 +35,12 @@ public class Words {
 		this.synonyms = synonyms;
 	}
 	
+	public String[] getAntonyms() {
+		return this.antonyms;
+	}
+	
+	public void setAnyonyms(String[] anytonyms) {
+		this.antonyms = anytonyms;
+	}
+	
 }
