@@ -102,6 +102,17 @@ public class Frame {
 	    txtDefinitions.setColumns(10);
 	    txtDefinitions.setBounds(20, 182, 286, 20);
 	    panel1.add(txtDefinitions);
+	    
+	    JTextField textField_2 = new JTextField();
+	    textField_2.setToolTipText("Part of Speech");
+	    textField_2.setColumns(10);
+	    textField_2.setBounds(346, 182, 147, 20);
+	    panel1.add(textField_2);
+	    
+	    JLabel lblPartOfSpech = new JLabel("Parts of Speech*");
+	    lblPartOfSpech.setFont(new Font("Tahoma", Font.BOLD, 18));
+	    lblPartOfSpech.setBounds(336, 130, 157, 20);
+	    panel1.add(lblPartOfSpech);
 		
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
