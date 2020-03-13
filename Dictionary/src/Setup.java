@@ -45,7 +45,7 @@ public class Setup {
 		return listOfWords;
 	}
 	
-	public static DefaultListModel<String> DescendingOrder(DefaultListModel<String> words){
+	public static DefaultListModel<String> descendingOrder(DefaultListModel<String> words){
 		DefaultListModel<String> b = new DefaultListModel<String>();
 		int n = words.getSize();
 		int j = n; 
@@ -56,5 +56,15 @@ public class Setup {
 		return b; 
 	}
 	
+	public static ArrayList<Words> descendingOrderArrayList(ArrayList<Words> words){
+		ArrayList<Words> b = new ArrayList<Words>();
+		int n = words.size();
+		int j = n; 
+		for (int i = 0; i < n; i++) {
+			b.add(words.get(j-1));
+			j = j - 1; 
+		}
+		return b; 
+	}
 	
 }
