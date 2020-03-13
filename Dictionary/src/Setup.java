@@ -30,7 +30,7 @@ public class Setup {
 	}
   }
 	
-	public static DefaultListModel<String> sortWordsAscending(DefaultListModel<String> listOfWords){																																																										
+	public static DefaultListModel<String> sortWordsAsc(DefaultListModel<String> listOfWords){																																																										
 		String temp; 
 		int n = listOfWords.getSize();
 		for (int i = 0; i < n; i++) {
@@ -45,7 +45,7 @@ public class Setup {
 		return listOfWords;
 	}
 	
-	public static DefaultListModel<String> descendingOrder(DefaultListModel<String> words){
+	public static DefaultListModel<String> reverseOrder(DefaultListModel<String> words){
 		DefaultListModel<String> b = new DefaultListModel<String>();
 		int n = words.getSize();
 		int j = n; 
@@ -56,7 +56,7 @@ public class Setup {
 		return b; 
 	}
 	
-	public static ArrayList<Words> descendingOrderArrayList(ArrayList<Words> words){
+	public static ArrayList<Words> reverseOrderArrayList (ArrayList<Words> words){
 		ArrayList<Words> b = new ArrayList<Words>();
 		int n = words.size();
 		int j = n; 

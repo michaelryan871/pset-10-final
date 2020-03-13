@@ -1,17 +1,30 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.BorderFactory; 
 import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 import javax.swing.event.*;
 
-// import com.google.gson.Gson; 
+import com.google.gson.Gson; 
 
 import java.io.*; 
 import java.util.*;
 
 
 public class Frame {
+	
+	  private static DefaultListModel<String> getWords() throws FileNotFoundException{
+		    Gson gson = new Gson();
+		        // String classpathDirectory = Setup.getClasspathDir();
+		        BufferedReader br = new BufferedReader(new FileReader( "./words.json"));
+		        Words[] words = gson.fromJson(br, Words[].class);
+		        System.out.println(words.length + " words added");
+		        DefaultListModel<String> listOfWords = new DefaultListModel<String>();
+		        for (Words word : words) {
+		          listOfWords.addElement(word.getWord().toLowerCase());
+		        }
+		       ;
+		        return  Setup.sortWordsAsc(listOfWords);
+		  }
 	
 	public static void createAndShowUI() throws BadLocationException {
 		JFrame Dictionary = new JFrame("Dictionary");
