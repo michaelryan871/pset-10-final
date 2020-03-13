@@ -27,4 +27,12 @@ public class Words {
 		this.definitions = definitions; 
 	}
 	
+	public String[] getSynonyms() {
+		this.synonyms;
+	}
+	
+	public void srtSynonyms(String[] synonyms) {
+		this.synonyms = synonyms;
+	}
+	
 }
