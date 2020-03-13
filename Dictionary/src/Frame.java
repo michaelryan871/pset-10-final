@@ -28,7 +28,15 @@ public class Frame {
 		remove.setBounds(110, 5, 100, 35);
 		Dictionary.add(remove);
 		
-			
+		JRadioButton ascend = new JRadioButton("Asc");
+		ascend.setBounds(22, 80, 60, 30);
+		Dictionary.add(ascend);
+		
+		JRadioButton descend = new JRadioButton("Desc");
+		descend.setBounds(123, 80, 65, 30);
+		Dictionary.add(descend);
+		
+		
 		//JFrame Option(s)
 		Dictionary.setLayout(null);
 		Dictionary.setVisible(true);
