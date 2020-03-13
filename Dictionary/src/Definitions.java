@@ -15,4 +15,11 @@ public class Definitions {
 		return this.definition;
 	}
 	
+	public void setPartOfSpeech(String partOfSpeech) {
+		this.partOfSpeech = partOfSpeech;
+	}
+	
+	public String getPartOfSpeech() {
+		return this.partOfSpeech;
+	}
 }
