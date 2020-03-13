@@ -89,8 +89,19 @@ public class Frame {
 	    JTextField textField = new JTextField();
 	    textField.setToolTipText("word");
 	    textField.setBounds(20, 76, 286, 20);
-	    panel_1.add(textField);
+	    panel1.add(textField);
 	    textField.setColumns(10);
+	    
+	    JLabel lblDefinitions = new JLabel("Definitions*");
+	    lblDefinitions.setFont(new Font("Tahoma", Font.BOLD, 32));
+	    lblDefinitions.setBounds(10, 107, 199, 54);
+	    panel1.add(lblDefinitions);
+	    
+	    JTextField txtDefinitions = new JTextField();
+	    txtDefinitions.setToolTipText("Definitions");
+	    txtDefinitions.setColumns(10);
+	    txtDefinitions.setBounds(20, 182, 286, 20);
+	    panel1.add(txtDefinitions);
 		
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
