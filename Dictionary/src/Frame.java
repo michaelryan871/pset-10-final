@@ -82,18 +82,17 @@ public class Frame {
 		
 	}
 	
-	  public static void main(String[] args){
+	  public static void main(String[] args) throws FileNotFoundException{
 
-	      javax.swing.SwingUtilities.invokeLater(new Runnable(){ // Schedule a job
-	        // for the event-dispatching thread: <-- Received from Oracle's website.
-	        public void run(){
-	          try {
-				createAndShowUI();
-			} catch (BadLocationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	        }
+	      getWords();
+	      EventQueue.invokeLater(new Runnable() {
+	    	  public void run() {
+	    		  try {
+	    			 createAndShowUI();
+	    		  } catch (Exception e) {
+	    			  e.printStackTrace();
+	    		  }
+	    	  }
 	      });
-	  }
+	 }
 }
