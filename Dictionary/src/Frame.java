@@ -22,7 +22,6 @@ public class Frame {
 	    	  public void run() {
 	    		  try {
 	    			 Frame window = new Frame();
-	    			 ((Window) window.Dictionary).setVisible(true);
 	    		  } catch (Exception e) {
 	    			  e.printStackTrace();
 	    		  }
@@ -58,7 +57,7 @@ public class Frame {
 		  }
 	
 	public Frame() throws FileNotFoundException, BadLocationException {
-		
+		createAndShowUI();
 	}
 	  
 	public static void createAndShowUI() throws BadLocationException {
@@ -67,6 +66,11 @@ public class Frame {
 		Dictionary.setPreferredSize(new Dimension(900, 750));
 		Dictionary.pack();
 		Dictionary.setLocationRelativeTo(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(218, 5, 675, 715);
+		Dictionary.getContentPane().add(panel);
+		panel.setLayout(new CardLayout(0, 0));
 		
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
@@ -92,6 +96,10 @@ public class Frame {
 		ButtonGroup group = new ButtonGroup();
 		group.add(ascend);
 		group.add(descend);
+		
+		JLabel lblNewLabel = new JLabel("Word*");
+		lblNewLabel.setBounds(10, 11, 117, 54);
+		p
 		
 		JTextArea definition = new JTextArea(); 
 		definition.setBounds(218, 5, 675, 715);
