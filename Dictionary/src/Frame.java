@@ -114,6 +114,27 @@ public class Frame {
 	    lblPartOfSpech.setBounds(336, 130, 157, 20);
 	    panel1.add(lblPartOfSpech);
 		
+	    JTextField textField_1 = new JTextField();
+	    textField_1.setToolTipText("synonym");
+	    textField_1.setColumns(10);
+	    textField_1.setBounds(20, 287, 286, 20);
+	    panel1.add(textField_1);
+	    
+	    JLabel lblSeperateByComma = new JLabel("Seperate by comma");
+	    lblSeperateByComma.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	    lblSeperateByComma.setBounds(20, 264, 137, 20);
+	    panel1.add(lblSeperateByComma);
+	    
+	    JLabel label = new JLabel("Seperate by comma");
+	    label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	    label.setBounds(20, 157, 137, 20);
+	    panel1.add(label);
+	    
+	    JLabel label_1 = new JLabel("Seperate by comma");
+	    label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	    label_1.setBounds(346, 161, 137, 20);
+	    panel1.add(label_1);
+	    
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
 		Dictionary.add(add);
