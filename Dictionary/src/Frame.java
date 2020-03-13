@@ -13,13 +13,16 @@ import java.util.*;
 
 public class Frame {
 	
-	  public static void main(String[] args) throws FileNotFoundException{
+	  protected Object Dictionary;
+
+	public static void main(String[] args) throws FileNotFoundException{
 
 	      getWords();
 	      EventQueue.invokeLater(new Runnable() {
 	    	  public void run() {
 	    		  try {
-	    			 createAndShowUI();
+	    			 Frame window = new Frame();
+	    			 ((Window) window.Dictionary).setVisible(true);
 	    		  } catch (Exception e) {
 	    			  e.printStackTrace();
 	    		  }
@@ -54,6 +57,10 @@ public class Frame {
 		        return listOfWords;
 		  }
 	
+	public Frame() throws FileNotFoundException, BadLocationException {
+		
+	}
+	  
 	public static void createAndShowUI() throws BadLocationException {
 		JFrame Dictionary = new JFrame("Dictionary");
 		Dictionary.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
