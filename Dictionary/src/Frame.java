@@ -39,6 +39,11 @@ public class Frame {
 		descend.setBounds(123, 80, 65, 30);
 		Dictionary.add(descend);
 		
+		// RadioButtons --> Group
+		ButtonGroup group = new ButtonGroup();
+		group.add(ascend);
+		group.add(descend);
+		
 		JTextArea definition = new JTextArea(); 
 		definition.setBounds(218, 5, 675, 715);
 		definition.setEditable(false);
