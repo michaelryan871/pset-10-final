@@ -72,6 +72,15 @@ public class Frame {
 		Dictionary.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
+		JScrollPane scrollPane = new JScrollPane();
+		panel.add(scrollPane, "addWord");
+		
+		JPanel panel1 = new JPanel();
+		panel1.setToolTipText("");
+		panel1.setBackground(Color.WHITE);
+		scrollPane.setViewportView(panel1);
+		panel1.setLayout(null);
+		
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
 		Dictionary.add(add);
@@ -96,10 +105,6 @@ public class Frame {
 		ButtonGroup group = new ButtonGroup();
 		group.add(ascend);
 		group.add(descend);
-		
-		JLabel lblNewLabel = new JLabel("Word*");
-		lblNewLabel.setBounds(10, 11, 117, 54);
-		p
 		
 		JTextArea definition = new JTextArea(); 
 		definition.setBounds(218, 5, 675, 715);
