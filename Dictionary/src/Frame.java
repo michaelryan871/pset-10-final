@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.BorderFactory; 
+import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 import javax.swing.event.*;
 
@@ -27,16 +28,16 @@ public class Frame {
 		remove.setBounds(110, 5, 100, 35);
 		Dictionary.add(remove);
 		
-		JTextField searchBar = new JTextField("Search");
+		JTextField searchBar = new JTextField("");
 		searchBar.setBounds(5, 45, 207, 35);
 		Dictionary.add(searchBar);
 		
 		JRadioButton ascend = new JRadioButton("Asc");
-		ascend.setBounds(22, 80, 60, 30);
+		ascend.setBounds(22, 85, 60, 30);
 		Dictionary.add(ascend);
 		
 		JRadioButton descend = new JRadioButton("Desc");
-		descend.setBounds(123, 80, 65, 30);
+		descend.setBounds(123, 85, 65, 30);
 		Dictionary.add(descend);
 		
 		// RadioButtons --> Group
@@ -55,6 +56,11 @@ public class Frame {
 		words.setVisibleRowCount(-1);
 		words.setBounds(6, 123, 207, 597);
 		Dictionary.add(words);
+		
+		//Border(s)
+		words.setBorder(new LineBorder(Color.BLACK, 2, true));
+		definition.setBorder(new LineBorder(Color.BLACK, 2, true));
+		searchBar.setBorder(new LineBorder(Color.BLACK, 1, true));
 		
 		//JFrame Option(s)
 		Dictionary.setLayout(null);
