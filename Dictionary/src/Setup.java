@@ -18,6 +18,18 @@ public class Setup {
 		}
 		
 		return classpathDirectory; 
+	} else {
+		String[] splitClasspathDir = classpath.split(":");
+		String classpathDirectory = "";
+		for (String s : splitClasspathDir) {
+			if (s.matches(".*lib/.*")) {
+				classpathDirectory = s; 
+			}
+		}
+		return classpathDirectory; 
 	}
-	}
+  }
+	
+	
+	
 }
