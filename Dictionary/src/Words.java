@@ -19,4 +19,12 @@ public class Words {
 		this.word = word;
 	}
 	
+	public Definitions[] getDefinitions() {
+		return this.definitions; 
+	}
+	
+	public void setDefinitions(Definitions[] definitions) {
+		this.definitions = definitions; 
+	}
+	
 }
