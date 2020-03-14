@@ -155,10 +155,10 @@ public class Frame {
 	    panel1.add(lblRequred);
 	    
 	    JScrollPane scrollPane_2 = new JScrollPane();
-	    panel.add(scrollPane_2, "defintions");
+	    panel1.add(scrollPane_2, "defintions");
 	    
-	    CardLayout cardLayout = (CardLayout) panel.getLayout();
-	    cardLayout.show(panel, "defintions");
+	    CardLayout cardLayout = (CardLayout) panel1.getLayout();
+	    cardLayout.show(panel1, "defintions");
 	    
 	    JTextPane textPane = new JTextPane();
 	    textPane.setEditable(false);
@@ -202,6 +202,31 @@ public class Frame {
 		Dictionary.add(add);
 		
 		JButton remove = new JButton("Remove");
+		 btnNewButton_1.addActionListener(new ActionListener() {
+//		      remove
+		      public void actionPerformed(ActionEvent arg0) {
+		    List<String> selectedWords = list.getSelectedValuesList();
+		        System.out.println("remove");
+		        try {
+		          Boolean wordFound = false;
+		      ArrayList<Words> words = getWordClass();
+		      ArrayList<Words> wordsToRemove = new ArrayList<Words>();
+		      for(String selectedWord : selectedWords) {
+		        for (Words word : words) {
+		                if(selectedWord.equals(word.getWord())) {
+		                  wordsToRemove.add(word);
+		                  wordFound = true;
+		                }
+		            }
+		          }
+		      if(wordFound) {
+		    	  int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete the following word(s)\nfrom the ditionary?\n\nThis action cannot be undone.\n\n","Warning",JOptionPane.YES_NO_OPTION);
+		    	  if(dialogResult == JOptionPane.YES_OPTION){
+		    		  for (Words word: wordsToRemove) {
+		    	          words.remove(word);
+		    	        }
+		    	  }
+		        
 		remove.setBounds(110, 5, 100, 35);
 		Dictionary.add(remove);
 		
@@ -254,9 +279,7 @@ public class Frame {
 		                    doc.insertString(doc.getLength(), definitionCounter + "." + selectedWord +" (" + definition.getPartOfSpeech() +")\n\n    "  +  definition.getDefinition() + "\n\n", null);
 		                    definitionCounter++;
 		                  }
-		          
-		/*words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-		words.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+
 		//Border(s)
 		words.setBorder(new LineBorder(Color.BLACK, 1, true));
 		definition.setBorder(new LineBorder(Color.BLACK, 1, true));
