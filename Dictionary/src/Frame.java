@@ -58,7 +58,9 @@ public class Frame {
 	
 	public Frame() throws FileNotFoundException, BadLocationException {
 		createAndShowUI();
+	
 	}
+
 	  
 	public static void createAndShowUI() throws BadLocationException {
 		JFrame Dictionary = new JFrame("Dictionary");
@@ -241,6 +243,22 @@ public class Frame {
 		          String selectedWord = words.getSelectedValue();
 		          System.out.println(selectedWord);
 		
+		          try {
+		              ArrayList<Words> Words = getWordClass();
+		              for(Words word: Words) {
+		                if(word.getWord().equals(selectedWord)) {
+		                  doc.remove(0, doc.getLength());
+		                  doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n" ,bigWord );
+		                  doc.insertString(doc.getLength(),"\n" ,null );
+		                  doc.insertString(doc.getLength(),"Definitions\n" ,header );
+		                  doc.insertString(doc.getLength(),"\n" ,null );
+		                  Definitions[] definitions = word.getDefinitions();
+		                  int definitionCounter = 1;
+		                  for (Definitions definition : definitions) {
+		                    doc.insertString(doc.getLength(), definitionCounter + "." + selectedWord +" (" + definition.getPartOfSpeech() +")\n\n    "  +  definition.getDefinition() + "\n\n", null);
+		                    definitionCounter++;
+		                  }
+		          
 		/*words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		words.setLayoutOrientation(JList.HORIZONTAL_WRAP);
 		words.setVisibleRowCount(-1);
@@ -259,3 +277,6 @@ public class Frame {
 		
 	}
 }
+		          
+		       
+		          
