@@ -192,6 +192,10 @@ public class Frame {
 	    doc.insertString(doc.getLength(),"Antonyms\n" ,header );
 	    doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
 	    
+	    JScrollPane scrollPane_1 = new JScrollPane();
+	    scrollPane_1.setBounds(12, 114, 179, 446);
+	    Dictionary.getContentPane().add(scrollPane_1);
+	    
 	    
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
