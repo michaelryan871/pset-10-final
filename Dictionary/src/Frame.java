@@ -156,6 +156,18 @@ public class Frame {
 	    lblRequred.setBounds(20, 513, 137, 20);
 	    panel1.add(lblRequred);
 	    
+	    JScrollPane scrollPane_2 = new JScrollPane();
+	    panel.add(scrollPane_2, "defintions");
+	    
+	    CardLayout cardLayout = (CardLayout) panel.getLayout();
+	    cardLayout.show(panel, "defintions");
+	    
+	    JTextPane textPane = new JTextPane();
+	    textPane.setEditable(false);
+	    scrollPane_2.setViewportView(textPane);
+
+	    
+	    
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
 		Dictionary.add(add);
