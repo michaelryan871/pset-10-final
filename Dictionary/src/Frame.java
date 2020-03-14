@@ -197,6 +197,75 @@ public class Frame {
 	    scrollPane_1.setBounds(12, 114, 179, 446);
 	    Dictionary.getContentPane().add(scrollPane_1);
 	    
+	    JList<String> list = new JList<String>();
+	    list.addListSelectionListener(new ListSelectionListener() {
+	      boolean ranOnce = false;
+	      public void valueChanged(ListSelectionEvent arg0) {
+	        if(ranOnce) {
+	          ranOnce = false;
+	        }else {
+	          ranOnce = true;
+
+	          String selectedWord = list.getSelectedValue();
+	          System.out.println(selectedWord);
+
+	          try {
+	            ArrayList<Words> Words = getWordClass();
+	            for(Words word: Words) {
+	              if(word.getWord().equals(selectedWord)) {
+	                doc.remove(0, doc.getLength());
+	                doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n" ,bigWord );
+	                doc.insertString(doc.getLength(),"\n" ,null );
+	                doc.insertString(doc.getLength(),"Definitions\n" ,header );
+	                doc.insertString(doc.getLength(),"\n" ,null );
+	                Definitions[] definitions = word.getDefinitions();
+	                int definitionCounter = 1;
+	                for (Definitions definition : definitions) {
+	                  doc.insertString(doc.getLength(), definitionCounter + "." + selectedWord +" (" + definition.getPartOfSpeech() +")\n\n    "  +  definition.getDefinition() + "\n\n", null);
+	                  definitionCounter++;
+	                }
+	                String[] synonyms = word.getSynonyms();
+	                if(synonyms != null && synonyms.length != 0) {
+	                  doc.insertString(doc.getLength(),"Synonyms\n" ,header );
+	                  doc.insertString(doc.getLength(),"\n" ,null );
+	                  int synonymCounter = 1;
+	                  for(String synonym : synonyms) {
+
+	                    doc.insertString(doc.getLength(), synonymCounter + "." + synonym + "\n", null);
+	                    synonymCounter++;
+	                  }
+	                }
+	                String[] antonyms = word.getAntonyms();
+	                if (antonyms != null && antonyms.length != 0) {
+	                  doc.insertString(doc.getLength(),"\n" ,null );
+	                  doc.insertString(doc.getLength(),"Antonyms\n" ,header );
+	                  doc.insertString(doc.getLength(),"\n" ,null );
+	                  int antonymCounter = 1;
+	                  for(String antonym : antonyms) {
+	                    doc.insertString(doc.getLength(), antonymCounter + "." + antonym + "\n", null);
+	                    antonymCounter++;
+	                  }
+	                }
+
+	              }
+	            }
+	          } catch (FileNotFoundException | BadLocationException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	          }
+	        }
+	      }
+	    });
+	    scrollPane_1.setViewportView(list);
+
+	    DefaultListModel<String> DLM =  getWords();
+
+	    list.setModel(DLM);
+	    
+	    JRadioButton rdbtnNewRadioButton = new JRadioButton("Asc");
+	    JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Desc");
+
+	    
 	}
 }
 		
