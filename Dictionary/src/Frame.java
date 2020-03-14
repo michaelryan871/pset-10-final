@@ -179,6 +179,18 @@ public class Frame {
 	    StyleConstants.setFontSize(bigWord, 36);
 	    StyleConstants.setBold(bigWord, true);
 
+	    doc.remove(0, doc.getLength());
+	    doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
+	    doc.insertString(doc.getLength(),"\n" , null );
+	    doc.insertString(doc.getLength(),"Definitions\n" ,header );
+	    doc.insertString(doc.getLength(),"\n" ,null );
+	    doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
+	    doc.insertString(doc.getLength(),"\n" ,null );
+	    doc.insertString(doc.getLength(),"Synonyms\n" ,header );
+	    doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
+	    doc.insertString(doc.getLength(),"\n\n" ,null );
+	    doc.insertString(doc.getLength(),"Antonyms\n" ,header );
+	    doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
 	    
 	    
 		JButton add = new JButton("Add");
