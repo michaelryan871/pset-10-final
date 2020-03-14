@@ -196,6 +196,8 @@ public class Frame {
 	    scrollPane_1.setBounds(12, 114, 179, 446);
 	    Dictionary.getContentPane().add(scrollPane_1);
 	    
+	    //
+	    
 	    
 		JButton add = new JButton("Add");
 		add.setBounds(5, 5, 100, 35);
@@ -228,7 +230,16 @@ public class Frame {
 		Dictionary.add(definition);
 		
 		JList<String> words = new JList<String>();
+		 words.addListSelectionListener(new ListSelectionListener() {
+		      boolean ranOnce = false;
+		      public void valueChanged(ListSelectionEvent arg0) {
+		        if(ranOnce) {
+		          ranOnce = false;
+		        }else {
+		          ranOnce = true;
 
+		          String selectedWord = words.getSelectedValue();
+		          System.out.println(selectedWord);
 		
 		/*words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		words.setLayoutOrientation(JList.HORIZONTAL_WRAP);
