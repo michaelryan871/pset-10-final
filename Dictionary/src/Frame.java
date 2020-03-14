@@ -71,7 +71,7 @@ public class Frame {
 
 		
 		JScrollPane scrollPane = new JScrollPane();
-		panel1.add(scrollPane, "addWord");
+	
 		
 		JPanel panel1 = new JPanel();
 		panel1.setToolTipText("");
@@ -323,9 +323,13 @@ public class Frame {
 		Dictionary.setLayout(null);
 		Dictionary.setVisible(true);
 		Dictionary.setResizable(false);
+		                }
+		              }
+		          }
+		        }
 		
-	}
-}
+
+
 		          
 		       
 		          
