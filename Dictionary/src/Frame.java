@@ -226,6 +226,40 @@ public class Frame {
 		    	          words.remove(word);
 		    	        }
 		    	  }
+		    	  
+		          Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		          String classpathDirectory = Setup.getClasspathDir();
+		           try (FileWriter writer = new FileWriter(classpathDirectory +"words.json")) {
+		                    gson.toJson(words, writer);
+		                    System.out.println("word removed");
+		                } catch (IOException e) {
+		                    e.printStackTrace( );
+		                }
+
+		        }
+		      } catch (FileNotFoundException e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		      }
+		          DefaultListModel<String> DLM = null;
+		      try {  
+		          if (!rdbtnNewRadioButton.isSelected()) {
+		              try {
+		              	DLM = Setup.reverseOrder(getWords());
+		            } catch (FileNotFoundException e2) {
+		              // TODO Auto-generated catch block
+		              e2.printStackTrace();
+		            }
+
+		          } else {
+		            try {
+		          	  DLM = getWords();
+		            } catch (FileNotFoundException e1) {
+		              // TODO Auto-generated catch block
+		              e1.printStackTrace();
+		            }
+		          }
+		    	  
 		        
 		remove.setBounds(110, 5, 100, 35);
 		Dictionary.add(remove);
