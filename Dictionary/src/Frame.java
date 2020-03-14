@@ -68,14 +68,10 @@ public class Frame {
 		Dictionary.setPreferredSize(new Dimension(900, 750));
 		Dictionary.pack();
 		Dictionary.setLocationRelativeTo(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(218, 5, 675, 715);
-		Dictionary.getContentPane().add(panel);
-		panel.setLayout(new CardLayout(0, 0));
+
 		
 		JScrollPane scrollPane = new JScrollPane();
-		panel.add(scrollPane, "addWord");
+		panel1.add(scrollPane, "addWord");
 		
 		JPanel panel1 = new JPanel();
 		panel1.setToolTipText("");
@@ -261,10 +257,6 @@ public class Frame {
 		          
 		/*words.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		words.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		words.setVisibleRowCount(-1);
-		words.setBounds(6, 123, 207, 597);
-		Dictionary.add(words);*/
-		
 		//Border(s)
 		words.setBorder(new LineBorder(Color.BLACK, 1, true));
 		definition.setBorder(new LineBorder(Color.BLACK, 1, true));
