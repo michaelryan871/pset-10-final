@@ -166,6 +166,19 @@ public class Frame {
 	    textPane.setEditable(false);
 	    scrollPane_2.setViewportView(textPane);
 
+	    StyledDocument doc = textPane.getStyledDocument();
+	    DefaultCaret caret = (DefaultCaret) textPane.getCaret();
+	    caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
+	    textPane.setBorder(BorderFactory.createCompoundBorder(
+	        textPane.getBorder(),
+	            BorderFactory.createEmptyBorder(10, 10 ,10 , 10)));
+	    
+	    Style bigWord = textPane.addStyle("Style", null);
+	    Style header = textPane.addStyle("Style", null);
+	    StyleConstants.setFontSize(header, 20);
+	    StyleConstants.setFontSize(bigWord, 36);
+	    StyleConstants.setBold(bigWord, true);
+
 	    
 	    
 		JButton add = new JButton("Add");
